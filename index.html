@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>icecode.tech</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* Stiluri generale */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Telegraf', sans-serif;
+            color: white;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            overflow-y: hidden; /* Împiedică scroll-ul pe orizontală */
+        }
+
+        /* Header */
+        .header {
+            font-family: 'Hagrid', sans-serif;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 1.5rem;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        .content-desktop {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 100%;
+            height: 80%;
+        }
+
+        .video {
+            flex: 4; /* 60% din lățimea totală */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Asigură că videoclipul se va redimensiona corespunzător */
+            pointer-events: none; /* Dezactivează clicurile pe video */
+        }
+
+        .text {
+            flex: 4; /* 40% din lățimea totală */
+            padding: 20px;
+            font-weight: 300; /* Stil mai subțire */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            text-align: left;
+            position: relative;
+            top: 40%; /* Ridică textul mai sus */
+            margin-top: 20px; /* Ajustează distanța față de partea de sus */
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Stiluri pentru mobil */
+        @media (max-width: 768px) {
+            body {
+                overflow-y: auto; /* Permite scroll-ul vertical pe mobil */
+            }
+
+            .content-desktop {
+                flex-direction: column;
+                align-items: left;
+            }
+
+            video {
+                width: 90%; /* Face video-ul mai mic pe mobil */
+                height: auto;
+                object-fit: contain; /* Se păstrează raportul de aspect */
+            }
+
+            .text {
+                text-align: left;
+                padding: 10px;
+                position: static;
+                top: 0; /* Resetează poziția pentru mobil */
+                margin-top: 10px; /* Mărește distanța dintre text și video */
+            }
+
+            .header {
+                position: relative;
+                text-align: right;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header"> <a href="icecode.tech">icecode.tech</a></div>
+    <div class="container">
+        <div class="content-desktop">
+            <div class="video">
+                <video src="soon.mp4" autoplay muted loop></video>
+            </div>
+            <div class="text">
+                <p>It's not here yet, but we'll let you in on a secret. It's coming really, really soon.</p>
+                <p>Really excited to get in touch with me?<br>
+                Send an email at <a href="mailto:covali@icecode.tech">covali@icecode.tech</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
